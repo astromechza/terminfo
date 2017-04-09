@@ -2,19 +2,19 @@ package terminfo
 
 import "os"
 
-// IsFileTTY returns true if the given file's descriptor is a terminal
-func IsFileTTY(f *os.File) bool {
-	return IsFDTTY(f.Fd())
+// IsFileTerminal returns true if the given file's descriptor is a terminal
+func IsFileTerminal(f *os.File) bool {
+	return IsFDTerminal(f.Fd())
 }
 
-// IsStdoutTTY returns true if os.Stdout is a terminal
-func IsStdoutTTY() bool {
-	return IsFileTTY(os.Stdout)
+// IsStdoutTerminal returns true if os.Stdout is a terminal
+func IsStdoutTerminal() bool {
+	return IsFileTerminal(os.Stdout)
 }
 
-// IsStderrTTY returns true if os.Stderr is a terminal
-func IsStderrTTY() bool {
-	return IsFileTTY(os.Stderr)
+// IsStderrTerminal returns true if os.Stderr is a terminal
+func IsStderrTerminal() bool {
+	return IsFileTerminal(os.Stderr)
 }
 
 // GetFileDimensions returns the dimensions of the given file by looking at its

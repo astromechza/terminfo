@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	fmt.Printf("Is stdout a tty? %t\n", terminfo.IsStdoutTTY())
-	fmt.Printf("Is stderr a tty? %t\n", terminfo.IsStdoutTTY())
+	fmt.Printf("Is stdout a tty? %t\n", terminfo.IsStdoutTerminal())
+	fmt.Printf("Is stderr a tty? %t\n", terminfo.IsStderrTerminal())
 	w, h, _ := terminfo.GetStderrDimensions()
 	fmt.Printf("Dimensions of stdout: %d x %d\n", w, h)
 }
